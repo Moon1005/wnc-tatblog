@@ -76,7 +76,7 @@ namespace TatBlog.WinApp
             //XemTopBaiDocNhieuNhat(context, 3);
 
             // Lay danh sach tu khoa
-            LayDanhSachTuKhoa(context);
+            LayDanhSachTuKhoa(context, "google");
 
             Console.ReadKey();
 
@@ -102,7 +102,7 @@ namespace TatBlog.WinApp
             }
         }
 
-        static async void LayDanhSachTuKhoa(BlogDbContext context)
+        static async void LayDanhSachTuKhoa(BlogDbContext context, string slug)
         {
             //tao doi tuong BlogRepository
             IBlogRepository blogRepo = new BlogRepository(context);
@@ -125,6 +125,20 @@ namespace TatBlog.WinApp
                 Console.WriteLine("{0,-5}{1,-50}{2,10}",
                     item.Id, item.Name, item.PostCount);
             }
+
+
+            //Lấy danh sach 
+            Tag tag = await blogRepo.GetTagBySlugAsync(slug);
+
+            //xuất ra màn hình
+            Console.WriteLine("{0,-5}{1,-50}{2,10}",
+                 "Id", "Name", "Count");
+            if (tag != null)
+            {
+                Console.WriteLine("{0,-5}{1,-50}{2,10}",
+                 tag.Id,tag.Name,tag.Posts.Count);
+            }
+
         }
 
 
