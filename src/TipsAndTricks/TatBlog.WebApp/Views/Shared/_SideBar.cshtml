@@ -1,0 +1,21 @@
+﻿<div class="my-4>
+	"@*Form tim kiem*@
+		<partial name="_SearchFrom"/>
+	<h1>
+		Tim kiem bai viet
+	</h1>
+	@*Cac chuyem muc, chu de*@
+	@await Component.InvokeAsync("CategoriesWidget")
+	@*Top bai viet noi bat*@
+	<h1>
+		Bai viet noi bat
+	</h1>
+	@*dang ki nhan tin moi*@
+	<h1>
+		Dang ki nhan tin moi
+	</h1>
+	@*tag cloud*@
+	<h1>
+		Tag cloud
+	</h1>
+</div>

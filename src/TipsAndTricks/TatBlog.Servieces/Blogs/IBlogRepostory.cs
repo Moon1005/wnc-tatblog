@@ -31,5 +31,8 @@ namespace TatBlog.Services.Blogs
         // Lấy danh sách từ khóa/thẻ và phân trang theo
         // các tham số pagingParams
         public Task<IPagedList<TagItem>> GetPagedTagsAsync(IPagingParams pagingParams, CancellationToken cancellationToken = default);
-    }
+        //Lấy Tag 
+        public Task<Tag> GetTagBySlugAsync(string slug, CancellationToken cancellationToken = default);
+		public Task<IPagedList<Post>> GetPagedPostsAsync(PostQuery condition, int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default);
+	}
 }
