@@ -1,13 +1,17 @@
-﻿using TatBlog.Core.Entities;
+﻿using System.Net;
+using TatBlog.Core.Entities;
 using TatBlog.Data.Contexts;
 using TatBlog.Data.Seeders;
 using TatBlog.Services.Blogs;
+
 
 namespace TatBlog.WinApp
 {
     public class Program
     {
-        static void Main(string[] args)
+		public static object WebApplication { get; private set; }
+
+		static void Main(string[] args)
         {
             // Tạo đối tượng context để quản lý phiên làm việc
             var context = new BlogDbContext();
@@ -81,7 +85,10 @@ namespace TatBlog.WinApp
             Console.ReadKey();
 
 
-        }
+			
+		}
+            
+        
 
         static async void XemTopBaiDocNhieuNhat(BlogDbContext context, int numPost)
         {
@@ -140,7 +147,7 @@ namespace TatBlog.WinApp
             }
 
         }
-
+   
 
     }
 }
