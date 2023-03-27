@@ -13,8 +13,9 @@ namespace TatBlog.Core.Entities
         public int Id { get; set; }
        //tên tác giả
         public string Fullname { get; set; }
-        //Tên định danh đùng để tạo URL
-        public string UrlSlug { get; set; }
+
+		//Tên định danh đùng để tạo URL
+		public string UrlSlug { get; set; }
         //đường dẫn tới file hình ảnh
         public string ImageUrl { get; set; }
         //ngày bắt đầu

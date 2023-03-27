@@ -11,6 +11,7 @@ namespace TatBlog.WebApp.Components
 		{
 			_blogRepository = blogRepository;
 		}
+
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			var categories = await _blogRepository.GetCategoriesAsync(); 

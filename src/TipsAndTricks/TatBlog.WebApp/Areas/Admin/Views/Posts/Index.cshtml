@@ -1,0 +1,62 @@
+﻿@using TatBlog.Core.Contracts;
+@using TatBlog.Core.Entities;
+
+
+@model TatBlog.WebApp.Areas.Admin.Models.PostFilterModel
+@{
+	ViewData["PageTitle"] = "Danh sach bai viet";
+	var postsList = ViewBag.PostList as IPagedList<Post>;
+}
+<h1>
+	Danh sach bai viet
+</h1>
+
+<partial name="_PostFilterPane" model="Model" />
+
+@if (postsList != null && postsList.Count > 0)
+{
+	<table class="table table-responsive table-striped">
+		<thead>
+			<tr>
+				<th>Tieu de</th>
+				<th>Tac gia</th>
+				<th>Chu de</th>
+				<th>Xuat ban</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var post in postsList)
+			{
+				<tr>
+					<td>
+						<a asp-area="Admin"
+							asp-controller="Posts"
+							asp-action="Edit"
+							asp-route-id="@post.Id"
+							class="text-bold">
+							@post.Title
+						</a>
+						<p class="text-muted">
+							@post.ShortDescription
+						</p>
+					</td>
+					<td>
+						@post.Author.Fullname
+					</td>
+					<td>
+						@post.Category.Name
+					</td>
+					<td>
+						@(post.Published?"Co":"khong")
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+else
+{
+	<h1 class="text-danger">
+		Khong tim thay bai viet nao
+	</h1>
+}

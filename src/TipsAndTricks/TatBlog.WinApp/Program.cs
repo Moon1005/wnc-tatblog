@@ -135,16 +135,16 @@ namespace TatBlog.WinApp
 
 
             //Lấy danh sach 
-            Tag tag = await blogRepo.GetTagBySlugAsync(slug);
+            //Tag tag = await blogRepo.GetTagBySlugAsync(slug);
 
             //xuất ra màn hình
-            Console.WriteLine("{0,-5}{1,-50}{2,10}",
-                 "Id", "Name", "Count");
-            if (tag != null)
-            {
-                Console.WriteLine("{0,-5}{1,-50}{2,10}",
-                 tag.Id,tag.Name,tag.Posts.Count);
-            }
+            //Console.WriteLine("{0,-5}{1,-50}{2,10}",
+            //     "Id", "Name", "Count");
+            //if (tag != null)
+            //{
+            //    Console.WriteLine("{0,-5}{1,-50}{2,10}",
+            //     tag.Id,tag.Name,tag.Posts.Count);
+            //}
 
         }
    
