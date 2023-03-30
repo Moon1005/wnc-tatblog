@@ -4,17 +4,27 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:35897",
-      "sslPort": 44369
+      "applicationUrl": "http://localhost:11786",
+      "sslPort": 44382
     }
   },
   "profiles": {
-    "TatBlog.WebApi": {
+    "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7067;http://localhost:5154",
+      "applicationUrl": "http://localhost:5131",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7257;http://localhost:5131",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
