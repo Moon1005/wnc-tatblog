@@ -28,27 +28,27 @@ namespace TatBlog.WebApi.Models
 		public static ApiResponse<T> FaiWithResult<T>(
 			HttpStatusCode statusCode,
 			T result,
-			params string[] errorsMessages)
+			params string[] errorMessages)
 		{
 			return new ApiResponse<T>()
 			{
 				Result = result,
 				StatusCode = statusCode,
-				Errors = new List<string>(errorsMessages)
+				Errors = new List<string>(errorMessages)
 			};
 		}	
 		public static ApiResponse Fail(
 			HttpStatusCode statusCode,
-			params string[] errorsMessages)
+			params string[] errorMessages)
 		{
-			if (errorsMessages==null || errorsMessages.Length == 0)
+			if (errorMessages is null or {Length : 0 })
 			{
-				throw new ArgumentNullException(nameof(errorsMessages));
+				throw new ArgumentNullException(nameof(errorMessages));
 			}
 			return new ApiResponse()
 			{
 				StatusCode = statusCode,
-				Errors = new List<string>(errorsMessages)
+				Errors = new List<string>(errorMessages)
 			};
 		}
 		public static ApiResponse Fail(

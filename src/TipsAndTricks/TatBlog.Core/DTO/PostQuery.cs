@@ -16,7 +16,6 @@ namespace TatBlog.Core.DTO
 		public string TagSlug { get; set; }
 		public string TitleSlug { get; set; }
 		public string Keyword { get; set; }
-		public DateTime PostedDate { get; set; }
 		public int Year { get; set; }
 		public int Month { get; set; }
 		public bool NotPublished { get; set; }
