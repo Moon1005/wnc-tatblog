@@ -15,9 +15,9 @@
 		//số lượt xem, đọc bài viết
 		public int ViewCount { get; set; }
 		//ngày giờ đăng bài
-		public DateTime PostedDate { get; set;}
-		//ngày giờ cập nhật lần cuối
-		public DateTime ModifiedDate { get; set;}
+		public DateTime PostedDate { get; set; }
+		////ngày giờ cập nhật lần cuối
+		public DateTime? ModifiedDate { get; set; }
 		//chuyên mục của bài viết
 		public CategoryDto Category { get; set;}
 		//tác giả của bài viết

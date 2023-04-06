@@ -7,7 +7,7 @@ namespace TatBlog.WebApi.Validations
 	{
 		public AuthorValidator() 
 		{
-			RuleFor(a=>a.FullName).NotEmpty()
+			RuleFor(a=>a.Fullname).NotEmpty()
 				.WithMessage("Tên tác giả không được để trống")
 				.MaximumLength(100)
 				.WithMessage("Tên tác giả tối đa 100 ký tự");
